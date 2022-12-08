@@ -16,15 +16,15 @@ struct ListNode* sortList(struct ListNode* head){
         sortat=1;
         aux=head;
         //printf("da\n");
-        while(p->next!=NULL){
+        while(p!=NULL){
                 
-            
+                if(p->next==NULL)break;
                 if(p->val>p->next->val){
                     sortat=0;
                     if(p==head){
                         head=p->next;
                         //aux=head;
-                        p->next=p->next->next;
+                        p->next=head->next;
                         head->next=p;
 
                         prev=p;
