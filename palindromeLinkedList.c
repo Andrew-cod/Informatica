@@ -12,23 +12,10 @@ int isPalindrome(struct ListNode* head){
     else{
         struct ListNode *tail=head,*p;
 
-            printf("\n");
-            p=head;
-            while(p!=NULL){
-                printf("%d ",p->val);
-
-                p=p->next;
-            }
-            printf("\n");
-
-
         tail=head;
         
         while(tail->next->next!=NULL)tail=tail->next;
-
-        printf("tail=%d\n",tail->next->val);
         if(tail->next->val==head->val){
-            printf("da sunt egale\n");
             if(head->next==tail->next)return 1;
             
             tail->next=NULL;
@@ -50,10 +37,11 @@ int isPalindrome(struct ListNode* head){
 int main(){
     struct ListNode *head=NULL,*p=NULL;
     //crearea unei liste simplu inaltuite
-
-    for(int i=0;i<5;i++){
+    int nr;
+    scanf("%d",&nr);
+    for(int i=0;i<nr;i++){
         p=(struct ListNode*)malloc(sizeof(struct ListNode));
-        scanf("%d ",&p->val);
+        scanf("%d",&p->val);
         p->next=head;
         head=p;
     }
