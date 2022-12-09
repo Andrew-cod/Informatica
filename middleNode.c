@@ -41,9 +41,5 @@ int main(){
     //printarea apelului de functie middleNode care returneaza pointerul la un nod si noi afisam campul val
     printf("%d",middleNode(head)->val);
 
-
-
-
-
     return 0;
 }
