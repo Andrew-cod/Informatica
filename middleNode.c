@@ -8,6 +8,7 @@
 
 struct ListNode* middleNode(struct ListNode* head){
     struct ListNode *mid=head;
+    //avem un contor nr si daca a fost cresccut de 2 ori adica a fost la nr par si iar a ajuns la nr par atunci trecem si pe middle la urmatorul deoarece head a trecut de 2 ori
     int nr=0;
     while(head!=NULL){
         if(nr%2==1)mid=mid->next;
@@ -28,7 +29,7 @@ int main(){
         p->next=head;
         head=p;
     }
-
+    //pritarea listei pentru claritate
     p=head;
     while(p!=NULL){
         printf("%d ",p->val);
@@ -36,6 +37,8 @@ int main(){
         p=p->next;
     }
     printf("\n");
+
+    //printarea apelului de functie middleNode care returneaza pointerul la un nod si noi afisam campul val
     printf("%d",middleNode(head)->val);
 
 
