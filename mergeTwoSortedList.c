@@ -44,7 +44,7 @@ struct ListNode* mergeTwoLists(struct ListNode* list1, struct ListNode* list2){
 int main(){
     struct ListNode *p=NULL,*temp=NULL, *p1=NULL;
     //creem prima lista
-    for(int i=2;i>=2;i=i-1){
+    for(int i=10;i>=2;i=i-1){
         temp= (struct ListNode*)malloc(sizeof(struct ListNode));
         temp->val=i;
         temp->next=p;
@@ -52,7 +52,7 @@ int main(){
     }
     //creem a doua lista
     temp=NULL;
-    for(int i=1;i>=1;i=i-1){
+    for(int i=20;i>=0;i=i-2){
         temp= (struct ListNode*)malloc(sizeof(struct ListNode));
         temp->val=i;
         temp->next=p1;
@@ -81,10 +81,5 @@ printf("\n");
         printf("%d ",temp->val);
         temp=temp->next;
     }
-    
-
-
-
-
     return 0;
 }
