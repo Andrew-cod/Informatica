@@ -13,6 +13,6 @@ int sum(int primul, ...){
 
 int main()  
 {   
-    printf("%d",sum(8,1,2,3,4,5,6,7,8,9));
+    printf("%d",sum(5,1,2,3,4,5,6));
     return 0;
 }
