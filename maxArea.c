@@ -1,17 +1,17 @@
 #include <stdio.h>
+
 int min(int a,int b){
     return (a<b)?a:b;
 }
 int maxArea(int* t, int n){
-    int local=0,global=0,i=0,j=0;
-    for(i=0;i<n;i++){
-        for(j=i;j<n;j++){
-
-            if(min(t[i],t[j])*(j-i)>local)local=min(t[i],t[j])*(j-i);
-            //printf("local=%d t[i]=%d t[j]=%d min()=%d j-i=%d\n",local,t[i],t[j],min(t[i],t[j]),j-i);
-        }
-        //printf("\n\n");
+    int i=0,j=n-1,local=0,global=0;
+    while(i!=j){
+        local=min(t[i],t[j])*(j-i);
+        //printf("%d %d %d\n",i,j,local);
         if(local>global)global=local;
+        if(t[i]<t[j]){
+            i++;
+        }else j--;
     }
     return global;
 }
