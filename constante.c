@@ -1,6 +1,7 @@
 #include <stdio.h>
- 
+ int uit=54;
 int main(){
+    
     int i;//variabila simpla
     const int a;//variabile de tip constanta
     int *o;//pointer la o variabila de tip integer
