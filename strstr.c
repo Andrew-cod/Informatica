@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 int strStr(char * haystack, char * needle){
 int i=0,ok=1,j=0,i_cop=0;
     while(haystack[i]!='\0'){
@@ -12,9 +14,22 @@ int i=0,ok=1,j=0,i_cop=0;
                 i_cop++;
             }
             if(ok==1)return i;
+            
         }
         i++;
     }
     //printf("%d",i);
     return -1;
+}
+
+
+int main(){
+    char s1[50],s2[50];
+    scanf("%s",s1);
+    scanf("%s",s2);
+    printf("%d",strStr(s1,s2));
+
+
+
+    return 0;
 }
