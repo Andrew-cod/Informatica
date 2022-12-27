@@ -7,28 +7,14 @@ struct ListNode {
 
 struct ListNode* removeNthFromEnd(struct ListNode* head, int n){
     int nr;
-    struct ListNode *p=head;
+    struct ListNode *p=head,*delete=head;
     while(p!=NULL){
         nr++;
+        if(nr>n+1)delete=delete->next;
         p=p->next;
     }
-    if(nr==1)return NULL;
-    nr=nr-n;
-    p=head;
-    struct ListNode *prev=head;
-    for(int i=0;i<nr;i++){
-        if(i!=0 && prev!=NULL)prev=prev->next;
-        if(p!=NULL)
-        p=p->next;
-        //printf("%d %d\n",prev->val,p->val);
-    }
-    if(p!=NULL)
-    if(p->next==NULL && prev!=NULL)prev->next=NULL;
-    else{
-    prev->next=p->next;
-    }
-    //printf("%d %d",prev->val,p->val);
-    return head;
+    if(delete!=NULL)p=delete->next;
+    if(delete!=NULL)delete->next=delete->next->next;
 
 }
 
@@ -46,7 +32,8 @@ for(int i=1;i<n;i++){
     p->next=head;
     head=p;
 }
-head=removeNthFromEnd(head,2);
+removeNthFromEnd(head,1);
+
 while(head!=NULL){
     printf("%d ",head->val);
     head=head->next;
