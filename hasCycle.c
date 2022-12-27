@@ -7,15 +7,11 @@
 
 int hasCycle(struct ListNode *head) {
     if(head==NULL)return 0;
-    struct ListNode *p=head,node,*t=NULL;
-    node.next=NULL;
-    node.val=99;
-    while(p!=NULL){
-        printf("%d ",p->val);
-        if(p==&node)return 1;
-        t=p;
-        p=p->next;
-        t->next=&node;
+    struct ListNode *fast=head,*slow=head;
+    while(fast->next!=NULL && fast->next->next!=NULL&& slow->next!=NULL){
+        fast=fast->next->next;
+        slow=slow->next;
+        if(fast==slow)return 1;
     }
     return 0;
 }
@@ -30,7 +26,7 @@ int main(){
     n2.next=&n3;
     n3.next=&n4;
     n4.next=&n5;
-    n5.next=&n3;
+    n5.next=NULL;
     head=&n1;
 
     
