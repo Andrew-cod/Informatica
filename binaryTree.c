@@ -7,6 +7,19 @@ struct tree{
     struct tree *right;
 };
 
+int deep(struct tree *p){
+    if(p->left==NULL && p->right==NULL)return 0;
+        else{
+            if(p->left!=NULL && p->right==NULL)return 1+deep(p->left);
+            else
+            if(p->left==NULL && p->right!=NULL)return 1+deep(p->right);
+            else
+            {
+                return (deep(p->left)>deep(p->right))?1+deep(p->left):1+deep(p->right);
+            }
+        }
+}
+
 void parcurge_postordine(struct tree *p){
     if(p!=NULL){
         parcurge_postordine(p->left);
@@ -87,6 +100,8 @@ int main(){
     printf("\nPostordine: ");
     parcurge_postordine(p);
 
+
+    printf("\nInaltimea arboorelui:%d\n",deep(p));
 
 
 
