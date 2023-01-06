@@ -9,12 +9,7 @@ struct TreeNode {
 };
 
 
-int isSameTree(struct TreeNode* p, struct TreeNode* q){
-    if(p==NULL && q==NULL)return 1;
-    if(p!=NULL && q==NULL)return 0;
-    if(p==NULL && q==NULL)return 0;
-    return (p->val==q->val)*isSameTree(p->left,q->left)*isSameTree(p->right,q->right);
-}
+d
 
 struct TreeNode* create_tree(){
     static int ok=0;
