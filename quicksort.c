@@ -65,7 +65,7 @@ for(int i=0;i<n;i++){
 //si este 0 pentru ca dorim sa sortam de la incputul tabelului
 qs(t,0,n-1);
 
-//printam rezultatul final
+//printaz
 for(int i=0;i<n;i++){
     printf("%d ",t[i]);
 }
