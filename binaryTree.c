@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+//asta ar fi un comentariu pentru idee test si atat 
 struct tree{
     int val;
     struct tree *left;
