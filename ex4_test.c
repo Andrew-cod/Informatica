@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define UNU 1
 
 void swap_char(char *a,char *b){
     char aux=*a;
@@ -42,13 +43,13 @@ void dp_desc(char** mat,int n){
     for(int i=0;i<n;i++){
         dp[i]=mat[i][i];
     }
-    
+
     int flag=0;
 
     do{
         flag=1;
         for(int i=1;i<n;i++){
-            if(dp[i-1]>dp[i]){
+            if(dp[i-1]<dp[i]){
                 flag=0;
                 swap_char(&dp[i-1],&dp[i]);
             }
@@ -84,8 +85,14 @@ int main(){
 
     for(int i=0;i<n;i++){
         for(int j=0;j<n;j++){
+            do{
             scanf(" %c",&mat[i][j]);
+            }while(mat[i][j]<'A' && mat[i][j]>'Z');
         }
+    }
+
+    for(int i=0;i<n;i++){
+        mat[i][0]='A';
     }
 
     do{
