@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
+#define pp(a) (a)++
 
 void swap(float *a, float *b)
 {
@@ -50,7 +51,7 @@ void repet(float *t, int n)
             j++;
             while (t[i] == aux)
             {
-                i++;
+                pp(i);
             }
         }
 
@@ -73,20 +74,22 @@ void print_desc(float *t, int n)
         printf("%f\n", t[i]);
 }
 
-int main()
-{
-    
+int main(){
     int n, opt;
     float *t, s = 0;
 
-    printf("n:");
-    scanf("%d", &n);
-
+    do{
+        printf("n:");
+        scanf("%d", &n);
+    }while(n<5);
     t = (float *)malloc(sizeof(float) * (n + 1));
     for (int i = 0; i < n; i++)
-    {
+    {   
+        do{
         scanf("%f", &t[i]);
+        }while(t[i]<0);
         s = s + t[i];
+        
     }
     t[n] = s / n; /// setarea ultimul element pe media aritmetica
     n++;          // am mai adaugat un ultim element
