@@ -64,6 +64,7 @@ void repet(float *t, int n)
         printf("%f ", t_rep[i]);
     }
     printf("\n");
+    free(t_rep);
 }
 
 void print_desc(float *t, int n)
@@ -122,5 +123,6 @@ int main(){
             break;
         }
     } while (1);
+    free(t);
     return 0;
 }
