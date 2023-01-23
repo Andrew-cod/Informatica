@@ -72,7 +72,7 @@ void mergeSort(int arr[], int l, int r)
         merge(arr, l, m, r);
     }
 }
-
+//un comentariu adaugator
 int issum(int target, int *t, int n, int *rez)
 {
     if (target < 0)
