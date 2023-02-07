@@ -22,7 +22,7 @@ void merge(int *t,int l ,int m ,int r){
     for(int k=l;k<=r;k++){
         // daca intr-un tabel este mai mic elementul il punem din 1 tabel sau daca al 2 tabel sa terminat la fel punem in 1 tabel 
         // altfel punem in tabelul 2
-        if( t_left[i]<t_right[j] || (i<=m)&&(j>r) ){
+        if( t_left[i]<t_right[j] || (i<m)&&(j>r) ){
             t[k]=t_left[i];
             i++;
         }
